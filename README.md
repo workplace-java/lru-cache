@@ -21,9 +21,11 @@
 
 # Demonstration with Example
   ## There are two files created with http endpoints listed in them
-    ### test_cache.http
+  
+  ### test_cache.http
       * The file tests the CacheController which implements LRU
-    ### test_reentrant_cache.http
+  
+  ### test_reentrant_cache.http
       * The file tets the ReentrantLockCacheController which implements LRU via ReentrantLock
         ** To make the test LRU, set accessMode to true
         ** To make the test FIFO, set accessMode to false
