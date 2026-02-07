@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: lru-cache
+
+server:
+  port: 8085
+  servlet:
+    context-path: /lru

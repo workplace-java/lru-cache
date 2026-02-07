@@ -1,0 +1,24 @@
+### Add A, B, and C
+GET http://localhost:8085/lru/cache/add?key=A&val=100
+###
+GET http://localhost:8085/lru/cache/add?key=B&val=200
+###
+GET http://localhost:8085/lru/cache/add?key=C&val=300
+
+### View State (Should see A, B, C)
+GET http://localhost:8085/lru/cache/view
+
+### Key does not exists and defaults
+GET http://localhost:8085/lru/cache/get?key=A
+
+### Evict A by adding D
+GET http://localhost:8085/lru/cache/add?key=D&val=400
+
+### Refresh B (Move B to the end of the list)
+GET http://localhost:8085/lru/cache/get?key=B
+
+### Evict C by adding E (B survives because it was accessed)
+GET http://localhost:8085/lru/cache/add?key=E&val=500
+
+### Final Verification
+GET http://localhost:8085/lru/cache/view
